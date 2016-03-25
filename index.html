@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="todoApp">
+<head>
+	<script src ="node_modules/angular/angular.min.js"></script>
+	<script src ="app.js"></script>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body ng-controller ="TodoListController">
+	<table><tr>
+		<td ng-repeat = "data in books"><img ng-src="{{data.img}}" height ="40%">
+		{{data.name}}
+		{{data.price}} ฿
+		<button ng-click ="add(data)">Add</button></td>
+		</tr>
+	</table>
+	<table>
+		<tr ng-repeat ="deldata in selectbook">
+			<td>{{deldata.name}}</td>
+			<td>{{deldata.price}}</td>
+			<td>{{deldata.amount}}</td>
+			<td><button ng-click="del(deldata)">Delete</button></td>
+		</tr>
+		Sum : {{sum}}
+		Discount : {{sell}}
+		Total : {{sum-sell}}
+
+	</table>
+</body>
+</html>
