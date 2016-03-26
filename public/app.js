@@ -79,8 +79,10 @@ var angular = angular.module('todoApp', [])
       search(deldata)
       if ($scope.selectbook[check].amount > 1) {
         $scope.selectbook[check].amount -= 1
+        $scope.bucket--
       } else {
         $scope.selectbook.splice(check, 1)
+        $scope.bucket--
       }
       $scope.cal()
     }

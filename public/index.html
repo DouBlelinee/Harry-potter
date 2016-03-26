@@ -31,7 +31,7 @@
       <div class="row">
         <div class="col s12 m4" ng-repeat="data in books">
             <img ng-src="{{data.img}}" class="responsive-img"><br>
-						<a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons" ng-click ="add(data)" id = "book{{$index +1 }}">add</i></a>
+						<a class="btn-floating btn-large waves-effect waves-light  teal lighten-1"><i class="material-icons" ng-click ="add(data)" id = "book{{$index +1 }}">add</i></a>
 						<h4>เล่มละ {{data.price}} ฿</h4>
         </div>
       </div>
@@ -41,10 +41,50 @@
 <!--modal popup-->
 <div class ="modal" id ="modal1">
 	<div class="modal-content">
-	<h4>ยอดรวมการสั่งซื้อ</h4>
+	<center><h5>ยอดรวมการสั่งซื้อ</h5></center>
+
 </div>
+
+	<table class="centered">
+	        <thead>
+	          <tr>
+	              <th data-field="id">ชื่อหนังสือ</th>
+	              <th data-field="name">ราคา</th>
+	              <th data-field="price">จำนวน</th>
+	          </tr>
+	        </thead>
+
+	        <tbody>
+	          <tr ng-repeat ="deldata in selectbook">
+	            <td>{{deldata.name}}</td>
+	            <td>{{deldata.price}}</td>
+	            <td>{{deldata.amount}}</td>
+							<td><a class="waves-effect waves-light btn  red darken-1" ng-click="del(deldata)">Delete</a></td>
+	          </tr>
+						<tr>
+						<td></td>
+	        </tbody>
+	      </table>
+
+			<div class="row">
+			      <div class="col s12 m5">
+			        <div class="card-panel teal">
+			          <span class="white-text">
+									ราคารวม <br> > {{sum}}<br>
+									ส่วนลด <br> > {{sell}}<br>
+									ราคาที่ต้องชำระ <br>  <div id ="total">{{sum-sell}}</div>
+			          </span>
+			        </div>
+			      </div>
+			    </div>
+
+
+
+
+
 	<div class="modal-footer">
 		<a href="#!" class="btn-flat modal-action modal-close waves-effect wave-default">Close</a>
+		<a href="#!" class="btn-flat modal-action modal-close waves-effect wave-default">Checkout</a>
 	</div>
 </div>
 
@@ -57,15 +97,7 @@
 
 
 	<table>
-		<tr ng-repeat ="deldata in selectbook">
-			<td>{{deldata.name}}</td>
-			<td>{{deldata.price}}</td>
-			<td>{{deldata.amount}}</td>
-			<td><button ng-click="del(deldata)">Delete</button></td>
-		</tr>
-		Sum : {{sum}}
-		Discount : {{sell}}
-		Total : <div id = "total">{{sum-sell}}</div>
+	</div>
 
 	</table>
 </body>
