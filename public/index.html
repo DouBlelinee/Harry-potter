@@ -4,6 +4,7 @@
 	<script src ="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+	 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<script src ="app.js"></script>
 	<meta charset="UTF-8">
 	<title>Ban Nai Jin Book</title>
@@ -13,7 +14,8 @@
   <div class="nav-wrapper">
     <a href="#" class="brand-logo">บ้านนายจิน</a>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <li><a href="">sass <span class="new badge">4</span></a></li>
+      <li><a href=""><i class="Medium material-icons">shopping_basket</i></a></li>
+			<li><a href=""><span class="new badge">{{bucket}}</span></a></li>
     </ul>
   </div>
 </nav>
@@ -43,12 +45,13 @@
       <div class="row">
         <div class="col s12 m4" ng-repeat="data in books">
             <img ng-src="{{data.img}}" class="responsive-img"><br>
+						<a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons" ng-click ="add(data)" id = "book{{$index +1 }}">add</i></a>
 
-            <br><br><br>
         </div>
       </div>
   </div>
 </div>
+
 
 
 	<table><tr>

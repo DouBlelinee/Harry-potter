@@ -52,13 +52,16 @@ var angular = angular.module('todoApp', [])
 
       }]
     var check = 0
+    $scope.bucket = 0
     $scope.selectbook = []
 
     $scope.add = function (data, index) {
       if (search(data)) {
         $scope.selectbook[check].amount += 1
+        $scope.bucket++
       } else {
         $scope.selectbook.push(data)
+        $scope.bucket++
       }
 
       $scope.selectbook.sort(function (a, b) {
@@ -88,6 +91,7 @@ var angular = angular.module('todoApp', [])
         $scope.sum += $scope.selectbook[i].amount * 100
         calamount.push($scope.selectbook[i].amount)
       }
+
       $scope.caldiscount(calamount)
     }
     var search = function (data) {
