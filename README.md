@@ -1,12 +1,12 @@
-# ร้านหนังสือ "บ้านนายจิน"
-## Install
+## ร้านหนังสือ "บ้านนายจิน"
+### Install
 
 > $ npm install
 
-##Start Server
+###Start Server
 
 > $ npm start
 
-##Run Test Standard
+###Run Test Standard
 
 > $npm test
