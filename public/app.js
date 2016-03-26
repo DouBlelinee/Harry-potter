@@ -3,49 +3,49 @@ var angular = angular.module('todoApp', [])
     $scope.books = [
 
       {
-        name: 'Book1',
+        name: 'แฮร์รี่ พอตเตอร์ กับ ศิลาอาถรรพ์',
         price: 100,
         img: '/img/1.jpg',
         amount: 1
 
       },
       {
-        name: 'Book2',
+        name: 'แฮร์รี่ พอตเตอร์ กับ ห้องแห่งความลับ',
         price: 100,
         img: '/img/2.jpg',
         amount: 1
 
       },
       {
-        name: 'Book3',
+        name: 'แฮร์รี่ พอตเตอร์ กับ นักโทษแห่งอัชคาบัน',
         price: 100,
         img: '/img/3.jpg',
         amount: 1
 
       },
       {
-        name: 'Book4',
+        name: 'แฮร์รี่ พอตเตอร์ กับ ถ้วยอัคนี',
         price: 100,
         img: '/img/4.jpg',
         amount: 1
 
       },
       {
-        name: 'Book5',
+        name: 'แฮร์รี่ พอตเตอร์ กับ ภาคนกฟีนิกซ์',
         price: 100,
         img: '/img/5.jpg',
         amount: 1
 
       },
       {
-        name: 'Book6',
+        name: 'แฮร์รี่ พอตเตอร์ กับ เจ้าชายเลือดผสม',
         price: 100,
         img: '/img/6.jpg',
         amount: 1
 
       },
       {
-        name: 'Book7',
+        name: 'แฮร์รี่ พอตเตอร์ กับ เครื่องรางยมทูต',
         price: 100,
         img: '/img/7.jpg',
         amount: 1
@@ -53,10 +53,6 @@ var angular = angular.module('todoApp', [])
       }]
     var check = 0
     $scope.selectbook = []
-    $scope.sum = 0
-    $scope.caldiscount = 0
-    $scope.result = 0
-    $scope.sell = 0
 
     $scope.add = function (data, index) {
       if (search(data)) {
@@ -92,7 +88,7 @@ var angular = angular.module('todoApp', [])
         $scope.sum += $scope.selectbook[i].amount * 100
         calamount.push($scope.selectbook[i].amount)
       }
-      $scope.test(calamount)
+      $scope.caldiscount(calamount)
     }
     var search = function (data) {
       for (var i = 0; i < $scope.selectbook.length; i++) {
@@ -102,11 +98,10 @@ var angular = angular.module('todoApp', [])
         }
       }
     }
-    $scope.test = function (calamount) {
+    $scope.caldiscount = function (calamount) {
       $scope.sell = 0
       var countlist = 0
       var exit = 0
-      console.log(calamount)
       do {
         for (var i = 0; i < calamount.length; i++) {
           if (calamount[i] !== 0) {
