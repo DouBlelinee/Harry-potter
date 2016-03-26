@@ -1,5 +1,4 @@
-/* global angular */
-angular.module('todoApp', [])
+var angular = angular.module('todoApp', [])
   .controller('TodoListController', function ($scope) {
     $scope.books = [
 
@@ -84,7 +83,6 @@ angular.module('todoApp', [])
       } else {
         $scope.selectbook.splice(check, 1)
       }
-
       $scope.cal()
     }
     $scope.cal = function () {
@@ -118,31 +116,22 @@ angular.module('todoApp', [])
             break
           }
         }
-
         if (countlist === 1) {
-          // console.log('1')
         }
         if (countlist === 2) {
           $scope.sell += ((countlist * 100) * 0.1)
-        // console.log('2')
         } else if (countlist === 3) {
           $scope.sell += ((countlist * 100) * 0.2)
-        // console.log('3')
         } else if (countlist === 4) {
           $scope.sell += ((countlist * 100) * 0.3)
-        // console.log('4')
         } else if (countlist === 5) {
           $scope.sell += ((countlist * 100) * 0.4)
-        // console.log('5')
         } else if (countlist === 6) {
           $scope.sell += ((countlist * 100) * 0.5)
-        // console.log('6')
         } else if (countlist === 7) {
           $scope.sell += ((countlist * 100) * 0.6)
-        // console.log('7')
         } else if (countlist === 0) {
           exit = 1
-        // console.log('exit')
         }
         for (var c = 0; c < calamount.length; c++) {
           if (calamount[c] > 0) {
@@ -151,6 +140,5 @@ angular.module('todoApp', [])
           }
         }
       } while (exit !== 1)
-    // console.log( $scope.sell )
     }
   })
