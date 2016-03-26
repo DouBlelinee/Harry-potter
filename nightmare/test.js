@@ -21,7 +21,7 @@ nightmare
     console.log(result)
     if (result === '540') {
       console.log('YES')
-    }else {
+    } else {
       console.log('NO')
     }
   })

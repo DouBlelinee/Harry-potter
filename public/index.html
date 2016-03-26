@@ -12,7 +12,7 @@
 <body ng-controller ="TodoListController">
 	<nav>
   <div class="nav-wrapper">
-    <a href="#" class="brand-logo">บ้านนายจิน</a>
+    <a href="#" class="brand-logo">Ban Nai Jin Book</a>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
       <li><a href=""><i class="Medium material-icons">shopping_basket</i></a></li>
 			<li><a href=""><span class="new badge">{{bucket}}</span></a></li>
@@ -46,7 +46,7 @@
         <div class="col s12 m4" ng-repeat="data in books">
             <img ng-src="{{data.img}}" class="responsive-img"><br>
 						<a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons" ng-click ="add(data)" id = "book{{$index +1 }}">add</i></a>
-
+						<h4>เล่มละ {{data.price}} ฿</h4>
         </div>
       </div>
   </div>
